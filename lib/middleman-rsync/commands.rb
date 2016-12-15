@@ -19,7 +19,7 @@ module Middleman
             raise Thor::Error, "Unknown environment '#{environment}'. Use 'staging' or 'production'."
           end
 
-          Middleman::RSync.deploy(environment)
+          Middleman::Rsync.deploy(environment)
         end
      end
 
