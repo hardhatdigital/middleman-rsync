@@ -19,7 +19,6 @@ module Middleman
             raise Thor::Error, "Unknown environment '#{environment}'. Use 'staging' or 'production'."
           end
 
-          #app = Middleman::Application.server.inst
           app = ::Middleman::Application.new
 
           Middleman::Rsync.deploy(app, environment)
