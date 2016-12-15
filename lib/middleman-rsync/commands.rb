@@ -15,11 +15,14 @@ module Middleman
         end
 
         def deploy
-          unless environment == 'staging' || environment == 'production'
+          unless environment == "staging" || environment == "production"
             raise Thor::Error, "Unknown environment '#{environment}'. Use 'staging' or 'production'."
           end
 
-          Middleman::Rsync.deploy(environment)
+          #app = Middleman::Application.server.inst
+          app = ::Middleman::Application.new
+
+          Middleman::Rsync.deploy(app, environment)
         end
      end
 

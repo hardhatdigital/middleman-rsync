@@ -1,7 +1,8 @@
 require "middleman-core"
 
 class RsyncDeploy < ::Middleman::Extension
-  option :server, nil, "Name of deployment server"
+  option :production_server, nil, "Domain name of production server"
+  option :staging_server, nil, "Domain name of staging server"
   option :path, nil, "Path on server to sync files"
   option :user, nil, "Remote user"
 
