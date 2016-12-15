@@ -3,10 +3,11 @@ require 'middleman-core'
 
 # Extension namespace
 class RsyncDeploy < ::Middleman::Extension
-  option :test, 'default', 'An example option'
+  option :server, nil, "Name of deployment server"
+  option :path, nil, "Path on server to sync files"
+  option :user, nil, "Remote user"
 
   def initialize(app, options_hash={}, &block)
-    # Call super to build options from the options_hash
     super
 
     # Require libraries only when activated
@@ -19,10 +20,6 @@ class RsyncDeploy < ::Middleman::Extension
   def after_configuration
     # Do something
   end
-
-  # A Sitemap Manipulator
-  # def manipulate_resource_list(resources)
-  # end
 
   # helpers do
   #   def a_helper

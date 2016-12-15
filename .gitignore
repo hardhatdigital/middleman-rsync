@@ -3,3 +3,5 @@
 
 # Ignore pkg folder
 /pkg
+
+.*.sw*
