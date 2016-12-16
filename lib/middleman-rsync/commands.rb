@@ -44,7 +44,7 @@ module Middleman
           end
 
           puts "Running rsync..."
-          # Rsync
+          run("rsync #{options[:rsync_flags]} ./build #{options[:user]}@#{server}:#{options[:path]}")
       
           puts "Complete."
         end
