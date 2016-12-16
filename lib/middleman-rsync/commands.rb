@@ -20,10 +20,10 @@ module Middleman
           true
         end
 
-        def ask(*args)
-          print(*args)
-          STDIN.gets.strip
-        end
+      #  def ask(*args)
+     #     print(*args)
+    #      STDIN.gets.strip
+   #     end
 
         def deploy
           unless environment == "staging" || environment == "production"
