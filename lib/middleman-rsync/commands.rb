@@ -20,11 +20,6 @@ module Middleman
           true
         end
 
-      #  def ask(*args)
-     #     print(*args)
-    #      STDIN.gets.strip
-   #     end
-
         def deploy
           unless environment == "staging" || environment == "production"
             raise Thor::Error, "Unknown environment '#{environment}'. Use 'staging' or 'production'."
