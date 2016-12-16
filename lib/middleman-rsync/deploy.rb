@@ -11,15 +11,14 @@ module Middleman
       config = app.extensions[:deploy].options
       server = config["#{environment}_server".to_sym]
 
-      puts "Deploying to #{environment}: #{server}\n"
+      puts "\nReady for deployment to #{environment}: #{server}\n\n"
 
       if not ["yes", "y"].include?(ask("OK? [Yes|y|Y|No|n|N] > ").downcase)
-        puts "Exiting."
+        puts "\nExiting."
         exit(1)
+      else
+        puts
       end
-
-      puts "Building locally..."
-      run("middleman build") || exit(1)
 
       puts "Running rsync..."
       # Rsync
