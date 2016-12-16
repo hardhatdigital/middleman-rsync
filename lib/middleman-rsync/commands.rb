@@ -20,19 +20,38 @@ module Middleman
           true
         end
 
+        def ask(*args)
+          print(*args)
+          STDIN.gets.strip
+        end
+
         def deploy
           unless environment == "staging" || environment == "production"
             raise Thor::Error, "Unknown environment '#{environment}'. Use 'staging' or 'production'."
           end
 
           app = ::Middleman::Application.new
+          config = app.extensions[:deploy].options
+          server = config["#{environment}_server".to_sym]
 
           if options[:build]
             puts "Building locally..."
             run("middleman build") || exit(1)
           end
 
-          Middleman::Rsync.deploy(app, environment)
+          puts "\nReady for deployment to #{environment}: #{server}\n\n"
+
+          if not ["yes", "y"].include?(ask("OK? [Yes|y|Y|No|n|N] > ").downcase)
+            puts "\nExiting."
+            exit(1)
+          else
+            puts
+          end
+
+          puts "Running rsync..."
+          # Rsync
+      
+          puts "Complete."
         end
      end
 
