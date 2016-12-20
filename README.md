@@ -2,6 +2,8 @@
 
 Deploy middleman sites via rsync.
 
+The site is built locally and then the `./build` directory is transported to the server via rsync.
+
 ## Installation
 
 Add it to your Gemfile:
