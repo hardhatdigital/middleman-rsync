@@ -26,7 +26,7 @@ module Middleman
           end
 
           app = ::Middleman::Application.new
-          config = app.extensions[:deploy].options
+          config = app.extensions[:rsync].options
           server = config["#{environment}_server".to_sym]
 
           if options[:build]
@@ -45,7 +45,7 @@ module Middleman
 
           puts "Running rsync..."
           run("rsync #{config[:rsync_flags]} ./build/ #{config[:user]}@#{server}:#{config[:path]}")
-      
+
           puts "Complete."
         end
      end
