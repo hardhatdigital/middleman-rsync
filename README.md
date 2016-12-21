@@ -19,10 +19,10 @@ $ bundle install
 Configure your environments in `config.rb`:
 ```ruby
 activate :rsync do |rsync|
-  rsync.production_server  = "myapp.com"
-  rsync.staging_server  = "staging.myapp.com"
-  rsync.path  = "/path/to/middleman/app/on/servers"
-  rsync.user  = "rsync_user"
+  rsync.production_server = "myapp.com"
+  rsync.staging_server = "staging.myapp.com"
+  rsync.path = "/path/to/middleman/app/on/servers"
+  rsync.user = "rsync_user"
 
   # Optional:
   rsync.rsync_flags, "--compress --archive --delete -v"
