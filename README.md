@@ -7,7 +7,7 @@ The site is built locally and then the `./build` directory is transported to the
 ## Installation
 
 Add it to your Gemfile:
-```
+```ruby
 gem "middleman-rsync"
 ```
 
@@ -17,7 +17,7 @@ $ bundle install
 ```
 
 Configure your environments in `config.rb`:
-```
+```ruby
 activate :rsync do |rsync|
   rsync.production_server  = "myapp.com"
   rsync.staging_server  = "staging.myapp.com"
