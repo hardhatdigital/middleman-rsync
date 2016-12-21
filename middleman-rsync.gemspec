@@ -8,15 +8,14 @@ Gem::Specification.new do |s|
   s.authors     = ["Andrew Buntine", "David Cristofaro"]
   s.email       = ["bunts@hhd.com.au", "david@dtcristo.com"]
   s.homepage    = "https://github.com/hardhatdigital/middleman-rsync"
-  # s.homepage    = "http://example.com"
   s.summary     = %q{A Middleman extension to deploy via rsync}
   # s.description = %q{A longer description of your extension}
+  s.license     = "GPL-3.0"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  # The version of middleman-core your extension depends on
   s.add_runtime_dependency("middleman-core", ["~> 4.0"])
 end
