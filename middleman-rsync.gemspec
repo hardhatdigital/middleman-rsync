@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/hardhatdigital/middleman-rsync"
   s.summary     = %q{A Middleman extension to deploy via rsync}
   # s.description = %q{A longer description of your extension}
-  s.license     = "GPL-3.0"
+  s.license     = "MIT"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
