@@ -2,7 +2,7 @@ require "middleman-core/cli"
 
 module Middleman
   module Cli
-     class Deploy < Thor::Group
+     class Rsync < Thor::Group
         include Thor::Actions
 
         check_unknown_options!
@@ -20,7 +20,7 @@ module Middleman
           true
         end
 
-        def deploy
+        def rsync
           unless environment == "staging" || environment == "production"
             raise Thor::Error, "Unknown environment '#{environment}'. Use 'staging' or 'production'."
           end
@@ -50,6 +50,6 @@ module Middleman
         end
      end
 
-     Base.register(Middleman::Cli::Deploy, "deploy", "deploy [environment] [options]", "Deploy a middleman website via rsync")
+     Base.register(Middleman::Cli::Rsync, "rsync", "rsync [environment] [options]", "Deploy a middleman website via rsync")
   end
 end

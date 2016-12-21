@@ -33,10 +33,10 @@ end
 
 Production:
 ```
-$ middleman deploy production
+$ middleman rsync production
 ```
 
 Staging (optional):
 ```
-$ middleman deploy staging
+$ middleman rsync staging
 ```
